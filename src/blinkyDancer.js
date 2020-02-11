@@ -1,4 +1,5 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+/*
+var BlinkyDancer = function(top, left, timeBetweenSteps) {
   var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -17,3 +18,31 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 
   return blinkyDancer;
 };
+*/
+//console.log('hi')
+
+var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  // console.log('hi')
+  makeDancer.call(this, top, left, timeBetweenSteps);
+  //console.log('hi')
+
+  // no longer need to keep track of
+  // this.blinkyDancer = makeDancer(top, left, timeBetweenSteps);
+  // var oldStep = this.step;
+};
+
+makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+
+makeBlinkyDancer.prototype.step = function() {
+  // reset this to t, for not binding to global
+  //var t = this;
+  //this.oldStep();
+  //this.toggle();
+  console.log('hi')
+  makeDancer.prototype.step.call(this);
+  //console.log('hi')
+  this.$node.toggle();
+};
+
+
