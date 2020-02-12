@@ -27,17 +27,17 @@ var makeDancerr = function(top, left, timeBetweenSteps) {
 };
 */
 
-var makeDancer = function(top, left, timeBetweenSteps) {
+var Dancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
-  this.$node = $('<span class="makedancer"></span>');
+  this.$node = $('<span class="dancer"></span>');
   //console.log(this)
   this.step();
   this.setPosition(top, left);
-}
+};
 
-makeDancer.prototype.step = function() {
+Dancer.prototype.step = function() {
   // make a reference this points to makedancer
   // var t = this;
   // debugger;
@@ -47,14 +47,21 @@ makeDancer.prototype.step = function() {
 
 };
 
-makeDancer.prototype.setPosition = function(top, left) {
-    var styleSettings = {
+Dancer.prototype.setPosition = function(top, left) {
+  var styleSettings = {
     top: top,
     left: left
   };
   this.$node.css(styleSettings);
 };
 
+Dancer.prototype.lineUp = function (top, left) {
+  var styleSettings = {
+    top: 600,
+    // left: 0
+  };
+  this.$node.css(styleSettings);
+};
 //this.makedancer.setPosition(top, left);
 
-// var newInstance = new makeDancer();
+// var newInstance = new Dancer();
