@@ -30,6 +30,8 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+
+    // setEvent();
   });
 
   $('.addLineUpButton').on('click', function(event) {
@@ -37,5 +39,25 @@ $(document).ready(function() {
       dancer.lineUp();
     });
   });
+
+    // var t = this;
+//   $('.balletDancer').on('mouseover', function(event) {
+//     //window.dancers.forEach(function(dancer) {
+//       var styleSettings = {
+//         width: 300,
+//         height: 300
+//       };
+//       t.$node.css(styleSettings);
+//     });
+//  // });
+
+  // var setEvent = function()
+  //   $('.dancer').mouseover(function(event) {
+  //       dancer.animate({ width: '400', height: '250' });
+  //     );
+  //   });
+  // setEvent();
 });
+
+
 
